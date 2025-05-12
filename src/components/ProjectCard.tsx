@@ -17,25 +17,45 @@ const ProjectCard = ({ title, description, imageSrc, tags, link }: ProjectCardPr
   
   return (
     <Card 
-      className="overflow-hidden bg-card border hover:shadow-lg transition-all duration-300"
+      className="overflow-hidden bg-card border border-border/50 rounded-xl hover:shadow-xl transition-all duration-500 h-full"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden h-48 sm:h-64">
+      <div className="relative overflow-hidden h-52 sm:h-64">
         <img 
           src={imageSrc} 
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-700 ease-in-out"
+          className="w-full h-full object-cover transition-transform duration-1000 ease-in-out"
           style={{
-            transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+            transform: isHovered ? 'scale(1.08)' : 'scale(1)',
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 transition-opacity duration-500"
+          style={{
+            opacity: isHovered ? 1 : 0,
+          }}
+        />
+        
+        {link && isHovered && (
+          <div className="absolute bottom-4 right-4 transition-all duration-300">
+            <Button 
+              size="sm" 
+              className="bg-white text-foreground hover:bg-white/90"
+              asChild
+            >
+              <a href={link} target="_blank" rel="noopener noreferrer">
+                View <ExternalLink size={14} className="ml-1" />
+              </a>
+            </Button>
+          </div>
+        )}
       </div>
+      
       <CardContent className="p-5">
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{description}</p>
         
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="flex flex-wrap gap-2 mb-2">
           {tags.map((tag, index) => (
             <span 
               key={index}
@@ -45,19 +65,6 @@ const ProjectCard = ({ title, description, imageSrc, tags, link }: ProjectCardPr
             </span>
           ))}
         </div>
-        
-        {link && (
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="w-full flex items-center justify-center gap-2 mt-2"
-            asChild
-          >
-            <a href={link} target="_blank" rel="noopener noreferrer">
-              View Project <ExternalLink size={14} />
-            </a>
-          </Button>
-        )}
       </CardContent>
     </Card>
   );

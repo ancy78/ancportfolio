@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Loader2 } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 const ContactForm = () => {
@@ -38,8 +38,8 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium mb-2">
+      <div className="space-y-1">
+        <label htmlFor="name" className="block text-sm font-medium mb-1 text-left">
           Name
         </label>
         <Input
@@ -48,12 +48,12 @@ const ContactForm = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="bg-white/50"
+          className="bg-white/50 border-muted focus-visible:ring-brand-blue"
         />
       </div>
       
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium mb-2">
+      <div className="space-y-1">
+        <label htmlFor="email" className="block text-sm font-medium mb-1 text-left">
           Email
         </label>
         <Input
@@ -63,12 +63,12 @@ const ContactForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-white/50"
+          className="bg-white/50 border-muted focus-visible:ring-brand-blue"
         />
       </div>
       
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium mb-2">
+      <div className="space-y-1">
+        <label htmlFor="message" className="block text-sm font-medium mb-1 text-left">
           Message
         </label>
         <Textarea
@@ -77,20 +77,22 @@ const ContactForm = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
-          className="min-h-[120px] resize-none bg-white/50"
+          className="min-h-[140px] resize-none bg-white/50 border-muted focus-visible:ring-brand-blue"
         />
       </div>
       
       <Button 
         type="submit" 
-        className={`w-full transition-all ${isSubmitted ? 'bg-green-500' : 'bg-brand-blue'}`}
+        className={`w-full transition-all ${isSubmitted ? 'bg-green-500 hover:bg-green-600' : 'bg-brand-blue hover:bg-brand-blue/90'} shadow-lg hover:shadow-xl py-6 h-auto`}
         disabled={isSubmitting || isSubmitted}
       >
         {isSubmitting ? (
-          <span>Sending...</span>
+          <span className="flex items-center justify-center gap-2">
+            <Loader2 size={18} className="animate-spin" /> Sending...
+          </span>
         ) : isSubmitted ? (
           <span className="flex items-center justify-center gap-2">
-            <CheckCircle size={18} /> Sent!
+            <CheckCircle size={18} /> Message Sent!
           </span>
         ) : (
           <span>Send Message</span>
