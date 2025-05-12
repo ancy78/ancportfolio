@@ -1,5 +1,6 @@
 
 import { ReactNode } from 'react';
+import { Phone } from 'lucide-react';
 
 interface ServiceCardProps {
   icon: ReactNode;
