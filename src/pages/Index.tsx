@@ -241,21 +241,14 @@ const Index = () => {
               </div>
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                  <path d="M2 17l10 5 10-5"></path>
-                  <path d="M2 12l10 5 10-5"></path>
+                  <path d="M12 2a10 10 0 1 0 10 10"></path>
+                  <path d="M12 12v-8"></path>
                 </svg>
               </div>
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue">
                   <circle cx="12" cy="12" r="10"></circle>
                   <circle cx="12" cy="12" r="4"></circle>
-                </svg>
-              </div>
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-blue">
-                  <path d="M12 2a10 10 0 1 0 10 10"></path>
-                  <path d="M12 12v-8"></path>
                 </svg>
               </div>
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -342,7 +335,7 @@ const Index = () => {
               <ProjectCard 
                 title="Weather Forecast Dashboard"
                 description="Interactive dashboard displaying weather forecasts with location-based data visualization."
-                imageSrc="https://images.unsplash.com/photo-1590055705218-7e64fb8a5e8a?auto=format&fit=crop&w=600&h=400&q=80"
+                imageSrc="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&h=400&q=80"
                 tags={["React", "API", "Chart.js"]}
                 link="https://github.com/"
               />
