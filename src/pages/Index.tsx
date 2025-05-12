@@ -19,7 +19,8 @@ import {
   Mail, 
   ExternalLink,
   Instagram,
-  CheckCircle
+  CheckCircle,
+  Phone
 } from 'lucide-react';
 
 const Index = () => {
