@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import SectionTitle from '@/components/SectionTitle';
 import ServiceCard from '@/components/ServiceCard';
@@ -7,6 +6,7 @@ import ProjectCard from '@/components/ProjectCard';
 import ContactForm from '@/components/ContactForm';
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
 import { Button } from '@/components/ui/button';
+import NavbarWithThemeToggle from '@/components/NavbarWithThemeToggle';
 import { 
   ArrowDown, 
   Layout, 
@@ -30,7 +30,7 @@ const Index = () => {
   
   return (
     <div className="min-h-screen">
-      <Navbar />
+      <NavbarWithThemeToggle />
       
       {/* Hero Section - Keep as is since we already enhanced it */}
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 hero-modern-gradient">
@@ -144,7 +144,7 @@ const Index = () => {
       </section>
       
       {/* About Section - Enhanced */}
-      <section id="about" className="py-24 bg-white">
+      <section id="about" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-on-scroll about-image-border">
@@ -264,7 +264,7 @@ const Index = () => {
       </section>
       
       {/* Portfolio Section - Enhanced */}
-      <section id="portfolio" className="py-24 bg-white">
+      <section id="portfolio" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <SectionTitle 
             title="Featured Projects" 
@@ -429,7 +429,7 @@ const Index = () => {
       </section>
       
       {/* Achievements Section - Enhanced */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-on-scroll space-y-8">
@@ -562,7 +562,7 @@ const Index = () => {
                       href="mailto:ancycp2004@gmail.com" 
                       className="text-muted-foreground hover:text-brand-blue transition-colors inline-flex items-center group"
                     >
-                      <span className="border-b border-transparent group-hover:border-brand-blue transition-all">ancycp2004@gmail.com</span>
+                      <span className="border-b border-transparent group-hover:border-brand-blue transition-colors pb-1">ancycp2004@gmail.com</span>
                     </a>
                   </div>
                 </div>
@@ -577,7 +577,7 @@ const Index = () => {
                       href="tel:7806996150" 
                       className="text-muted-foreground hover:text-brand-blue transition-colors inline-flex items-center group"
                     >
-                      <span className="border-b border-transparent group-hover:border-brand-blue transition-all">+91 7806996150</span>
+                      <span className="border-b border-transparent group-hover:border-brand-blue transition-colors pb-1">+91 7806996150</span>
                     </a>
                   </div>
                 </div>
@@ -594,7 +594,7 @@ const Index = () => {
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-brand-blue transition-colors inline-flex items-center group"
                     >
-                      <span className="border-b border-transparent group-hover:border-brand-blue transition-all">linkedin.com/in/ancycp78</span>
+                      <span className="border-b border-transparent group-hover:border-brand-blue transition-colors pb-1">linkedin.com/in/ancycp78</span>
                     </a>
                   </div>
                 </div>
@@ -611,7 +611,7 @@ const Index = () => {
                       rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-brand-blue transition-colors inline-flex items-center group"
                     >
-                      <span className="border-b border-transparent group-hover:border-brand-blue transition-all">github.com</span>
+                      <span className="border-b border-transparent group-hover:border-brand-blue transition-colors pb-1">github.com</span>
                     </a>
                   </div>
                 </div>

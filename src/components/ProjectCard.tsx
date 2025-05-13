@@ -40,7 +40,7 @@ const ProjectCard = ({ title, description, imageSrc, tags, link }: ProjectCardPr
           <div className="absolute bottom-4 right-4 transition-all duration-300">
             <Button 
               size="sm" 
-              className="bg-white text-foreground hover:bg-white/90"
+              className="bg-white text-foreground dark:bg-secondary dark:text-secondary-foreground hover:bg-white/90 dark:hover:bg-secondary/90"
               asChild
             >
               <a href={link} target="_blank" rel="noopener noreferrer">
@@ -59,7 +59,7 @@ const ProjectCard = ({ title, description, imageSrc, tags, link }: ProjectCardPr
           {tags.map((tag, index) => (
             <span 
               key={index}
-              className="bg-secondary text-xs font-medium py-1 px-2 rounded-full"
+              className="bg-secondary text-secondary-foreground text-xs font-medium py-1 px-2 rounded-full"
             >
               {tag}
             </span>
