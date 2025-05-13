@@ -3,8 +3,9 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { CheckCircle, Loader2 } from 'lucide-react';
+import { CheckCircle, Loader2, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -17,23 +18,44 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
+    // EmailJS configuration
+    const serviceId = 'service_0y6ip0f';
+    const templateId = 'template_rgin1de';
+    const publicKey = 'XMNcuGqZq8tsEoNel';
+    
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+    
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
+      .then((response) => {
+        console.log('Email sent successfully:', response);
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you soon.",
+        });
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setName('');
+        setEmail('');
+        setMessage('');
+        
+        // Reset success state after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error('Email sending failed:', error);
+        toast({
+          title: "Error",
+          description: "Failed to send your message. Please try again.",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
       });
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setName('');
-      setEmail('');
-      setMessage('');
-      
-      // Reset success state after 3 seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
   };
 
   return (
@@ -48,7 +70,7 @@ const ContactForm = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="bg-white/50 border-muted focus-visible:ring-brand-blue"
+          className="bg-white/50 border-muted focus-visible:ring-brand-blue dark:bg-gray-800/50"
         />
       </div>
       
@@ -63,7 +85,7 @@ const ContactForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-white/50 border-muted focus-visible:ring-brand-blue"
+          className="bg-white/50 border-muted focus-visible:ring-brand-blue dark:bg-gray-800/50"
         />
       </div>
       
@@ -77,7 +99,7 @@ const ContactForm = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
-          className="min-h-[140px] resize-none bg-white/50 border-muted focus-visible:ring-brand-blue"
+          className="min-h-[140px] resize-none bg-white/50 border-muted focus-visible:ring-brand-blue dark:bg-gray-800/50"
         />
       </div>
       
@@ -95,7 +117,9 @@ const ContactForm = () => {
             <CheckCircle size={18} /> Message Sent!
           </span>
         ) : (
-          <span>Send Message</span>
+          <span className="flex items-center justify-center gap-2">
+            <Mail size={18} /> Send Message
+          </span>
         )}
       </Button>
     </form>
