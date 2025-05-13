@@ -25,14 +25,14 @@ import {
 const Index = () => {
   useAnimateOnScroll();
   
-  // Create placeholder profile image URL
-  const profileImageUrl = "https://images.unsplash.com/photo-1531891437562-4301cf35b7e4?auto=format&fit=crop&w=512&h=512";
+  // Update profile image URL to the provided URL
+  const profileImageUrl = "https://ibb.co/g10zqHw".replace("ibb.co", "i.ibb.co");
   
   return (
     <div className="min-h-screen">
       <NavbarWithThemeToggle />
       
-      {/* Hero Section - Keep as is since we already enhanced it */}
+      {/* Hero Section - Updated with square mask for profile image */}
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-16 hero-modern-gradient">
         <div className="container mx-auto px-4 py-12 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -98,21 +98,23 @@ const Index = () => {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-brand-blue/10 animate-pulse"></div>
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border-2 border-brand-purple/20"></div>
               
-              {/* Profile image */}
+              {/* Profile image with square mask */}
               <div className="relative z-10">
                 <div className="relative animate-float">
                   <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-purple rounded-3xl blur-md transform rotate-6 scale-105"></div>
-                  <div className="relative bg-white rounded-3xl p-3 shadow-xl">
-                    <img 
-                      src={profileImageUrl} 
-                      alt="Ancy C P" 
-                      className="w-80 h-auto object-cover rounded-2xl hero-profile-image"
-                    />
+                  <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-xl">
+                    <div className="overflow-hidden rounded-2xl w-80 h-80">
+                      <img 
+                        src="https://i.ibb.co/g10zqHw" 
+                        alt="Ancy C P" 
+                        className="w-full h-full object-cover hero-profile-image"
+                      />
+                    </div>
                   </div>
                 </div>
                 
                 {/* Floating badges */}
-                <div className="absolute -top-6 -right-8 bg-white p-3 rounded-xl shadow-lg animate-float" style={{animationDelay: '0.5s'}}>
+                <div className="absolute -top-6 -right-8 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-lg animate-float" style={{animationDelay: '0.5s'}}>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
                       <Code size={18} className="text-brand-blue" />
@@ -121,7 +123,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-8 -left-8 bg-white p-3 rounded-xl shadow-lg animate-float" style={{animationDelay: '1s'}}>
+                <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-lg animate-float" style={{animationDelay: '1s'}}>
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-brand-yellow/10 rounded-full flex items-center justify-center">
                       <Figma size={18} className="text-brand-yellow" />
@@ -135,7 +137,7 @@ const Index = () => {
           
           <a 
             href="#about" 
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all animate-bounce"
+            className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-lg flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all animate-bounce"
             aria-label="Scroll to About section"
           >
             <ArrowDown size={20} />
@@ -143,16 +145,18 @@ const Index = () => {
         </div>
       </section>
       
-      {/* About Section - Enhanced */}
+      {/* About Section - Enhanced with square mask profile image */}
       <section id="about" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="animate-on-scroll about-image-border">
-              <img 
-                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&h=700&q=80" 
-                alt="About Ancy" 
-                className="rounded-2xl shadow-xl w-full object-cover transform hover:scale-[1.02] transition-all duration-500"
-              />
+              <div className="overflow-hidden rounded-2xl w-full shadow-xl h-[80vh] max-h-[700px]">
+                <img 
+                  src="https://i.ibb.co/g10zqHw" 
+                  alt="About Ancy" 
+                  className="rounded-2xl w-full h-full object-cover transform hover:scale-[1.02] transition-all duration-500"
+                />
+              </div>
             </div>
             
             <div className="animate-on-scroll space-y-8">
