@@ -76,7 +76,7 @@ const HeroSection = () => {
                 <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-xl">
                   <div className="overflow-hidden rounded-2xl w-80 h-80">
                     <img 
-                      src="https://i.ibb.co/g10zqHw" 
+                      src="/lovable-uploads/7e0e4462-baf0-4096-909f-e75af3423d4d.png" 
                       alt="Ancy C P" 
                       className="w-full h-full object-cover hero-profile-image"
                     />

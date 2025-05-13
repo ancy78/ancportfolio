@@ -9,7 +9,7 @@ const AboutSection = () => {
           <div className="animate-on-scroll about-image-border">
             <div className="overflow-hidden rounded-2xl w-full shadow-xl h-[80vh] max-h-[700px]">
               <img 
-                src="https://i.ibb.co/g10zqHw" 
+                src="/lovable-uploads/7e0e4462-baf0-4096-909f-e75af3423d4d.png" 
                 alt="About Ancy" 
                 className="rounded-2xl w-full h-full object-cover transform hover:scale-[1.02] transition-all duration-500"
               />
