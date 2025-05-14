@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm py-2"
+          ? "bg-white/80 dark:bg-gray-900/90 backdrop-blur-md shadow-sm py-2"
           : "bg-transparent py-4"
       }`}
     >
@@ -66,10 +67,13 @@ const Navbar = () => {
               Contact Me
             </Button>
           </a>
+          {/* Added theme toggle to the navbar */}
+          <ThemeToggle />
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        {/* Mobile Menu Button and Theme Toggle on Mobile */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
@@ -82,7 +86,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden bg-white dark:bg-gray-900 border-t dark:border-gray-800">
           <div className="container mx-auto py-4 flex flex-col space-y-4 px-4">
             <a
               href="#home"

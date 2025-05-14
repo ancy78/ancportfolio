@@ -1,6 +1,7 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Linkedin, Github, Mail, Code, Figma } from 'lucide-react';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const HeroSection = () => {
   return (
@@ -9,10 +10,10 @@ const HeroSection = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="flex flex-wrap gap-3 mb-2 reveal-text reveal-delay-1">
-              <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue rounded-full text-sm font-medium badge-glow inline-flex items-center">
+              <span className="px-4 py-1.5 bg-brand-blue/10 text-brand-blue dark:bg-brand-blue/20 dark:text-brand-blue rounded-full text-sm font-medium badge-glow inline-flex items-center">
                 <code className="mr-1">{'<'}</code>IT Student<code className="ml-1">{'/>'}</code>
               </span>
-              <span className="px-4 py-1.5 bg-brand-yellow/10 text-brand-yellow rounded-full text-sm font-medium badge-glow inline-flex items-center">
+              <span className="px-4 py-1.5 bg-brand-yellow/10 text-brand-yellow dark:bg-brand-yellow/20 dark:text-brand-yellow rounded-full text-sm font-medium badge-glow inline-flex items-center">
                 <code className="mr-1">{'{'}</code>Developer<code className="ml-1">{'}'}</code>
               </span>
             </div>
@@ -41,7 +42,7 @@ const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-md hover:shadow-lg transform hover:scale-110"
+                className="w-12 h-12 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-md hover:shadow-lg transform hover:scale-110"
               >
                 <Linkedin size={20} />
               </a>
@@ -50,14 +51,14 @@ const HeroSection = () => {
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-md hover:shadow-lg transform hover:scale-110"
+                className="w-12 h-12 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-md hover:shadow-lg transform hover:scale-110"
               >
                 <Github size={20} />
               </a>
               <a 
                 href="mailto:ancycp2004@gmail.com" 
                 aria-label="Email"
-                className="w-12 h-12 rounded-full bg-white flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-md hover:shadow-lg transform hover:scale-110"
+                className="w-12 h-12 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition-all shadow-md hover:shadow-lg transform hover:scale-110"
               >
                 <Mail size={20} />
               </a>
@@ -69,17 +70,22 @@ const HeroSection = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-brand-blue/10 animate-pulse"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full border-2 border-brand-purple/20"></div>
             
-            {/* Profile image with square mask */}
+            {/* Profile image with square mask - improved styling */}
             <div className="relative z-10">
               <div className="relative animate-float">
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-purple rounded-3xl blur-md transform rotate-6 scale-105"></div>
-                <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-3 shadow-xl">
-                  <div className="overflow-hidden rounded-2xl w-80 h-80">
-                    <img 
-                      src="/lovable-uploads/7e0e4462-baf0-4096-909f-e75af3423d4d.png" 
-                      alt="Ancy C P" 
-                      className="w-full h-full object-cover hero-profile-image"
-                    />
+                {/* Improved shadow and glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand-blue to-brand-purple rounded-2xl blur-md transform rotate-3 scale-105"></div>
+                {/* Changed to a square container with consistent dimensions */}
+                <div className="relative bg-white dark:bg-gray-800 rounded-2xl p-3 shadow-xl">
+                  <div className="overflow-hidden rounded-xl w-72 h-72 relative">
+                    {/* Added AspectRatio to ensure proper image display */}
+                    <AspectRatio ratio={1/1} className="w-full h-full">
+                      <img 
+                        src="/lovable-uploads/7e0e4462-baf0-4096-909f-e75af3423d4d.png" 
+                        alt="Ancy C P" 
+                        className="object-cover w-full h-full hero-profile-image"
+                      />
+                    </AspectRatio>
                   </div>
                 </div>
               </div>
@@ -87,7 +93,7 @@ const HeroSection = () => {
               {/* Floating badges */}
               <div className="absolute -top-6 -right-8 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-lg animate-float" style={{animationDelay: '0.5s'}}>
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-brand-blue/10 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-brand-blue/10 dark:bg-brand-blue/20 rounded-full flex items-center justify-center">
                     <Code size={18} className="text-brand-blue" />
                   </div>
                   <span className="font-medium">Developer</span>
@@ -96,7 +102,7 @@ const HeroSection = () => {
               
               <div className="absolute -bottom-8 -left-8 bg-white dark:bg-gray-800 p-3 rounded-xl shadow-lg animate-float" style={{animationDelay: '1s'}}>
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-brand-yellow/10 rounded-full flex items-center justify-center">
+                  <div className="w-8 h-8 bg-brand-yellow/10 dark:bg-brand-yellow/20 rounded-full flex items-center justify-center">
                     <Figma size={18} className="text-brand-yellow" />
                   </div>
                   <span className="font-medium">Designer</span>

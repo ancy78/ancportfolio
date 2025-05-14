@@ -6,9 +6,7 @@ const NavbarWithThemeToggle = () => {
   return (
     <div className="relative">
       <Navbar />
-      <div className="absolute right-4 top-4 z-50">
-        <ThemeToggle />
-      </div>
+      {/* Changed from absolute positioning to being part of the navbar */}
     </div>
   );
 };
