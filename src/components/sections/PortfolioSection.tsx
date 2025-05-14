@@ -17,7 +17,7 @@ const PortfolioSection = () => {
         
         <div className="flex justify-center mb-10">
           <div className="inline-flex gap-2 p-1.5 bg-secondary rounded-full shadow-md">
-            <button className="px-5 py-2 bg-white rounded-full text-sm font-medium shadow-sm">
+            <button className="px-5 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium shadow-sm text-foreground">
               All Projects
             </button>
             <button className="px-5 py-2 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">

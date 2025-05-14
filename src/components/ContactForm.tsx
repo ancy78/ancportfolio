@@ -61,7 +61,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-1">
-        <label htmlFor="name" className="block text-sm font-medium mb-1 text-left">
+        <label htmlFor="name" className="block text-sm font-medium mb-1 text-left text-foreground">
           Name
         </label>
         <Input
@@ -70,12 +70,12 @@ const ContactForm = () => {
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
-          className="bg-white/50 border-muted focus-visible:ring-brand-blue dark:bg-gray-800/50"
+          className="bg-white/50 dark:bg-gray-800/50 border-muted focus-visible:ring-brand-blue"
         />
       </div>
       
       <div className="space-y-1">
-        <label htmlFor="email" className="block text-sm font-medium mb-1 text-left">
+        <label htmlFor="email" className="block text-sm font-medium mb-1 text-left text-foreground">
           Email
         </label>
         <Input
@@ -85,12 +85,12 @@ const ContactForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-white/50 border-muted focus-visible:ring-brand-blue dark:bg-gray-800/50"
+          className="bg-white/50 dark:bg-gray-800/50 border-muted focus-visible:ring-brand-blue"
         />
       </div>
       
       <div className="space-y-1">
-        <label htmlFor="message" className="block text-sm font-medium mb-1 text-left">
+        <label htmlFor="message" className="block text-sm font-medium mb-1 text-left text-foreground">
           Message
         </label>
         <Textarea
@@ -99,7 +99,7 @@ const ContactForm = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
-          className="min-h-[140px] resize-none bg-white/50 border-muted focus-visible:ring-brand-blue dark:bg-gray-800/50"
+          className="min-h-[140px] resize-none bg-white/50 dark:bg-gray-800/50 border-muted focus-visible:ring-brand-blue"
         />
       </div>
       

@@ -52,7 +52,7 @@ const ProjectCard = ({ title, description, imageSrc, tags, link }: ProjectCardPr
       </div>
       
       <CardContent className="p-5">
-        <h3 className="text-lg font-semibold mb-2">{title}</h3>
+        <h3 className="text-lg font-semibold mb-2 text-foreground">{title}</h3>
         <p className="text-muted-foreground text-sm mb-4 line-clamp-2">{description}</p>
         
         <div className="flex flex-wrap gap-2 mb-2">
