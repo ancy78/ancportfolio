@@ -28,7 +28,7 @@ const AchievementsSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Education</h4>
-                  <p className="text-muted-foreground">Bachelor's degree in Information Technology with focus on software development and system design.</p>
+                  <p className="text-muted-foreground dark:text-gray-300">Bachelor's degree in Information Technology with focus on software development and system design.</p>
                 </div>
               </div>
               
@@ -38,7 +38,7 @@ const AchievementsSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Technical Skills</h4>
-                  <p className="text-muted-foreground">Proficient in front-end and back-end development, with experience in modern frameworks and design tools.</p>
+                  <p className="text-muted-foreground dark:text-gray-300">Proficient in front-end and back-end development, with experience in modern frameworks and design tools.</p>
                 </div>
               </div>
               
@@ -48,51 +48,51 @@ const AchievementsSection = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Projects</h4>
-                  <p className="text-muted-foreground">Completed several notable projects including the Instagram Fake Profile Detection Tool and mobile applications.</p>
+                  <p className="text-muted-foreground dark:text-gray-300">Completed several notable projects including the Instagram Fake Profile Detection Tool and mobile applications.</p>
                 </div>
               </div>
             </div>
           </div>
           
           <div className="grid grid-cols-2 gap-6 animate-on-scroll">
-            <div className="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center">
                   <Figma size={24} className="text-brand-blue" />
                 </div>
-                <h4 className="font-semibold">UI/UX Design</h4>
+                <h4 className="font-semibold dark:text-white">UI/UX Design</h4>
               </div>
-              <p className="text-muted-foreground text-sm">Expert in creating user-centered designs with Figma.</p>
+              <p className="text-muted-foreground text-sm dark:text-gray-300">Expert in creating user-centered designs with Figma.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center">
                   <Code size={24} className="text-brand-blue" />
                 </div>
-                <h4 className="font-semibold">Web Dev</h4>
+                <h4 className="font-semibold dark:text-white">Web Dev</h4>
               </div>
-              <p className="text-muted-foreground text-sm">Skilled in building responsive web applications.</p>
+              <p className="text-muted-foreground text-sm dark:text-gray-300">Skilled in building responsive web applications.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center">
                   <Smartphone size={24} className="text-brand-blue" />
                 </div>
-                <h4 className="font-semibold">Mobile Apps</h4>
+                <h4 className="font-semibold dark:text-white">Mobile Apps</h4>
               </div>
-              <p className="text-muted-foreground text-sm">Experience in creating native and cross-platform mobile apps.</p>
+              <p className="text-muted-foreground text-sm dark:text-gray-300">Experience in creating native and cross-platform mobile apps.</p>
             </div>
             
-            <div className="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100">
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 dark:border-gray-700">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-brand-blue/10 rounded-full flex items-center justify-center">
                   <Instagram size={24} className="text-brand-blue" />
                 </div>
-                <h4 className="font-semibold">Photography</h4>
+                <h4 className="font-semibold dark:text-white">Photography</h4>
               </div>
-              <p className="text-muted-foreground text-sm">Creative photography skills to complement design work.</p>
+              <p className="text-muted-foreground text-sm dark:text-gray-300">Creative photography skills to complement design work.</p>
             </div>
           </div>
         </div>
